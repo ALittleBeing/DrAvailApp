@@ -1,0 +1,23 @@
+<h2>Edit details</h2>
+<br>
+<p>ID: {{Id}}</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div>
+        <mat-form-field hintLabel="Max 10 characters" appearance="outline">
+            <mat-label>Enter Full Name</mat-label>
+            <input matInput #Name maxlength="25" placeholder="Ex. Micky Mouse" required formControlName="Name">
+            <mat-hint align="end">{{Name.value?.length || 0}}/25</mat-hint>
+        </mat-form-field>
+    </div>
+    <div>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select required #Gender formControlName="Gender">
+                <mat-option value="0">Male</mat-option>
+                <mat-option value="1">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="warn">Save Changes</button>
+</form>

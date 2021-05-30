@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Doctor } from '../doctors';
+import { DoctorService } from '../doctor.service';
+import { Doctor, Gender, doctor } from '../doctors';
 
 @Component({
   selector: 'app-doctors-list',
@@ -8,22 +9,9 @@ import { Doctor } from '../doctors';
 })
 export class DoctorsListComponent implements OnInit {
 
-  doctors: doctor[];
-  constructor() {
-    var doctor1: doctor = {
-      ID: 2,
-      Name: "Dr A"
-    }
-    var doctor2: doctor = {
-      ID: 3,
-      Name: "Dr N"
-    }
-    var doctor3: doctor = {
-      ID: 4,
-      Name: "Dr Z"
-    }
-    this.doctors = [doctor1, doctor2, doctor3];
-
+  doctors: doctor[]| undefined;
+  constructor(private doctorService: DoctorService) {
+    this.doctorService.getDoctors().subscribe((data) => this.doctors = data);
    }
 
   ngOnInit(): void {
@@ -31,13 +19,3 @@ export class DoctorsListComponent implements OnInit {
 
 }
 
-class doctor{
-  ID: number;
-  Name: string;
-
-  constructor(id:number, name:string){
-    this.ID = id;
-    this.Name = name;
-  }
-  
-}

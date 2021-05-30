@@ -1,0 +1,16 @@
+.example-card {
+    max-width: 400px;
+    height: auto;
+    padding: auto;
+    margin: 5px;
+    border-radius: 20px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+.doctor-list{
+  display: flex;
+}
+  

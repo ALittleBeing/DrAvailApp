@@ -151,3 +151,14 @@ export enum District
         Viluppuram,
         Virudhunagar
 }
+
+export class doctor{
+    ID: number;
+    Name: string;
+    Gender: Gender;
+    constructor(id:number, name:string){
+      this.ID = id;
+      this.Name = name;
+      this.Gender = Gender.Male;
+    }
+  }
