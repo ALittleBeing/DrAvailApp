@@ -17,6 +17,10 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { DoctorDetailsComponent } from './doctor/doctor-details/doctor-details.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -38,8 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule, 
     MatButtonModule,
     LayoutModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule,
-    MatGridListModule, MatFormFieldModule, MatInputModule,MatSelectModule,
-    ReactiveFormsModule,
+    MatGridListModule, MatFormFieldModule, MatInputModule,MatSelectModule,MatDatepickerModule,
+    ReactiveFormsModule,MatSnackBarModule,MatNativeDateModule,MatStepperModule,
     HttpClientModule
   ],
   

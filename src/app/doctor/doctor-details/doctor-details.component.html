@@ -1,7 +1,26 @@
 <h2>Doctor Details</h2>
+<a [routerLink]="'/doctors'">Back to List</a>
 
 <div *ngIf="Doctor">
-  Name: <h3>{{ Doctor.Name }}</h3>
-  ID: <h4>{{ Doctor.ID}}</h4>
-  <P>Gender: {{Doctor.Gender}}</P>
+  <div class="row" style="margin-left: 80%;">
+    <div class="column">
+      <button mat-fab color="accent" [routerLink]="'/doctors/edit/' + Doctor.ID"><mat-icon>edit</mat-icon></button>
+    </div>
+  </div>
+  <mat-card class="example-card" style="max-width: 400px;">
+    <mat-card-title-group>
+      <div mat-card-avatar class="example-header-image">
+        <img *ngIf="Doctor.Gender == 0" mat-card-image src="../../../assets/images/user.png" alt="Photo of a Doctor">
+        <img *ngIf="Doctor.Gender == 1" mat-card-image src="../../../assets/images/user-female.png"
+          alt="Photo of a Doctor">
+      </div>
+      <mat-card-title>{{Doctor.Name}}</mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content>
+      <p>
+        ID: {{Doctor.ID}}
+      </p>
+        <p>Name: {{Doctor.Name}}</p>
+    </mat-card-content>
+  </mat-card>
 </div>
